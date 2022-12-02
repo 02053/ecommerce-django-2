@@ -1,0 +1,21 @@
+.cont-sh {
+  display: flex;
+}
+
+.btn-search {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .cont-sh {
+    padding-top: 0.5rem;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+}

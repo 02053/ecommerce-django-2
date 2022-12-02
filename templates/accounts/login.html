@@ -1,0 +1,24 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+Iniciar sesion
+
+<form method="post" class="container">
+    {% csrf_token %}
+
+    <span class="list-group-item list-group-item-danger">{{ error | escape }}</span>
+
+
+    {% for field in form %}
+
+    <label for="{{ field.auto_id }}" class="form-label">{{ field.label }}</label>
+    {{ field }}
+
+    {% endfor %}
+
+    <button class="btn btn-primary">Iniciar sesion</button>
+
+</form>
+
+{% endblock %}

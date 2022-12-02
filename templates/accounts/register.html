@@ -1,0 +1,33 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+Registrarse
+
+<form method="post" class="container">
+    {% csrf_token %}
+
+    {% if form.errors %}
+    {% for field in form %}
+    {% if field.errors %}
+    {% for error in field.errors %}
+    <span class="list-group-item list-group-item-danger">{{ error | escape }}</span>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <span class="list-group-item list-group-item-danger">{{ error | escape }}</span>
+
+    {% for field in form %}
+
+    <label for="{{ field.auto_id }}" class="form-label">{{ field.label }}</label>
+    {{ field }}
+
+    {% endfor %}
+
+    <button class="btn btn-primary">Crear usuario</button>
+
+</form>
+
+{% endblock %}
